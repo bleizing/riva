@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">Riva</string>
+
+    <string name="sahabat_diabetesi">Sahabat Diabetesi</string>
+    <string name="mencegah_dan_merawat_luka">Mencegah dan Merawat Luka</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="homecare">HOMECARE</string>
+    <string name="bonus_refferal">BONUS REFFERAL</string>
+    <string name="untuk_anda">UNTUK ANDA</string>
+    <string name="artikel">ARTIKEL</string>
+    <string name="perawatan_luka">PERAWATAN LUKA</string>
+    <string name="perawatan_kaki">PERAWATAN KAKI</string>
 </resources>

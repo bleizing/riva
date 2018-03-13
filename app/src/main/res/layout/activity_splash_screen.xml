@@ -1,19 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="bleizing.riva.SplashScreen">
+    android:background="@drawable/backgorund_polos"
+    tools:context="bleizing.riva.activity.SplashScreen">
 
+    <ImageView
+        android:id="@+id/img_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="150dp"
+        android:src="@drawable/logo_riva_glow"/>
+
+    <TextView
+        android:id="@+id/tv_sahabat_diabetesi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/img_logo"
+        android:layout_marginTop="100dp"
+        android:text="@string/sahabat_diabetesi"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/hijau"
+        android:fontFamily="@font/montserrat"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/montserrat"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/tv_sahabat_diabetesi"
+        android:text="@string/mencegah_dan_merawat_luka"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/biru_tua"
+        android:fontFamily="@font/montserrat"/>
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>
