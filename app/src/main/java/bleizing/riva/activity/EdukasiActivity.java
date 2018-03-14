@@ -14,12 +14,18 @@ import bleizing.riva.fragment.ArticleFragment;
 import bleizing.riva.fragment.BonusReferensiFragment;
 import bleizing.riva.fragment.DetailArticleFragment;
 import bleizing.riva.fragment.EdukasiFragment;
+import bleizing.riva.fragment.KakiFragment;
+import bleizing.riva.fragment.LukaFragment;
 
 public class EdukasiActivity extends AppCompatActivity {
     private static final String TAG = "EdukasiActivity";
 
     private static final String FRAGMENT_ARTICLE_TAG = "ArticleFragment";
     private static final String FRAGMENT_DETAIL_ARTICLE_TAG = "DetailArticleFragment";
+    private static final String FRAGMENT_LUKA_TAG = "LukaFragment";
+    private static final String FRAGMENT_DETAIL_LUKA_TAG = "DetailLukaFragment";
+    private static final String FRAGMENT_KAKI_TAG = "KakiFragment";
+    private static final String FRAGMENT_DETAIL_KAKI_TAG = "DetailKakiFragment";
 
     private String last_title;
 
@@ -45,26 +51,21 @@ public class EdukasiActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                FragmentManager fm = getSupportFragmentManager();
-                if (fm.getBackStackEntryCount() > 0) {
-                    fm.popBackStack();
-                    setActionBarTitle(last_title);
-                } else {
-                    // app icon in action bar clicked; go home
-                    Intent intent = new Intent(this, HomeActivity.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    startActivity(intent);
-                }
+                goBack();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
 
+    @Override
+    public void onBackPressed() {
+        goBack();
+    }
+
     public void setActionBarTitle(String title) {
         getSupportActionBar().setTitle(title);
     }
-
 
     public void changeToArticleFragment() {
         last_title = getSupportActionBar().getTitle().toString();
@@ -91,5 +92,38 @@ public class EdukasiActivity extends AppCompatActivity {
         transaction.commit();
     }
 
+    public void changeToLukaFragment() {
+        last_title = getSupportActionBar().getTitle().toString();
 
+        LukaFragment lukaFragment = new LukaFragment();
+
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.fragment_container, lukaFragment, FRAGMENT_LUKA_TAG);
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
+
+    public void changeToKakiFragment() {
+        last_title = getSupportActionBar().getTitle().toString();
+
+        KakiFragment kakiFragment = new KakiFragment();
+
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.fragment_container, kakiFragment, FRAGMENT_KAKI_TAG);
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
+
+    private void goBack() {
+        FragmentManager fm = getSupportFragmentManager();
+        if (fm.getBackStackEntryCount() > 0) {
+            fm.popBackStack();
+            setActionBarTitle(last_title);
+        } else {
+            // app icon in action bar clicked; go home
+            Intent intent = new Intent(this, HomeActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+        }
+    }
 }

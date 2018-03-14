@@ -13,4 +13,7 @@
     <string name="artikel">ARTIKEL</string>
     <string name="perawatan_luka">PERAWATAN LUKA</string>
     <string name="perawatan_kaki">PERAWATAN KAKI</string>
+    <string name="edukasi_article">A R T I K E L</string>
+    <string name="edukasi_perawatan_luka">PERAWATAN LUKA</string>
+    <string name="edukasi_perawatan_kaki">PERAWATAN KAKI</string>
 </resources>

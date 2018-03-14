@@ -7,15 +7,17 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:fillViewport="true">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="vertical">
 
                 <ImageView
@@ -26,34 +28,53 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
                     android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp">
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/tv_title_article"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat"
                         android:text="JUDUL ARTICLE"
-                        android:textSize="14sp"
-                        android:textStyle="bold"
                         android:textColor="@color/hijau"
-                        android:fontFamily="@font/montserrat"/>
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/tv_content_article"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="ISI ARTICLEISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLEISI ARTICLE"
-                        android:textSize="12sp"
+                        android:fontFamily="@font/montserrat"
+                        android:text="ISI ARTICLEISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLEISI ARTICLE "
                         android:textColor="@color/colorPrimaryDark"
-                        android:fontFamily="@font/montserrat"/>
+                        android:textSize="12sp" />
 
                 </LinearLayout>
 
             </LinearLayout>
+
+            <!--<Button-->
+                <!--android:id="@+id/previous"-->
+                <!--android:layout_width="35dp"-->
+                <!--android:layout_height="35dp"-->
+                <!--android:layout_alignParentBottom="true"-->
+                <!--android:background="@color/biru_muda"-->
+                <!--android:text="<"-->
+                <!--android:textSize="20sp" />-->
+
+            <!--<Button-->
+                <!--android:id="@+id/next"-->
+                <!--android:layout_width="35dp"-->
+                <!--android:layout_height="35dp"-->
+                <!--android:layout_alignParentBottom="true"-->
+                <!--android:layout_alignParentEnd="true"-->
+                <!--android:background="@color/biru_muda"-->
+                <!--android:text=">"-->
+                <!--android:textSize="20sp" />-->
 
         </RelativeLayout>
 

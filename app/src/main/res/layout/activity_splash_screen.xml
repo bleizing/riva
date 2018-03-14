@@ -21,12 +21,13 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/img_logo"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="125dp"
         android:text="@string/sahabat_diabetesi"
         android:textSize="18sp"
         android:textStyle="bold"
         android:textColor="@color/hijau"
         android:fontFamily="@font/montserrat"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
