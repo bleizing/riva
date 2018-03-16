@@ -1,13 +1,76 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="bleizing.riva.fragment.HomecareFragment">
+    android:background="@drawable/backgorund_polos"
+    tools:context="bleizing.riva.fragment.HomecareFragment"
+    android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/gradient_biru_hijau"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:text="APA ITU HOMECARE?"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/montserrat"/>
+        </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="10dp">
 
-</FrameLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:text="ISI ABOUT HOMECARE ISI ABOUT HOMECARE ISI ABOUT HOMECARE ISI ABOUT HOMECARE ISI ABOUT HOMECARE ISI ABOUT HOMECARE ISI ABOUT HOMECARE ISI ABOUT HOMECARE ISI ABOUT HOMECARE ISI ABOUT HOMECARE ISI ABOUT HOMECARE ISI ABOUT HOMECARE ISI ABOUT HOMECARE ISI ABOUT HOMECARE "
+            android:textColor="@color/colorPrimaryDark" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/border_list_hitam"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:gravity="center_horizontal"
+            android:text="Biaya Pendaftaran Sebesar Rp. 100.000"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="17sp"/>
+
+        <Button
+            android:id="@+id/btn_booking_sekarang"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:background="@color/biru_muda"
+            android:layout_margin="5dp"
+            android:text="BOOKING SEKARANG"
+            android:textSize="15sp"/>
+    </LinearLayout>
+
+</LinearLayout>

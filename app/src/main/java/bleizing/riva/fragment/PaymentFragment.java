@@ -9,15 +9,14 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import bleizing.riva.R;
-import bleizing.riva.activity.JurnalGdsActivity;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class GrafikFragment extends Fragment {
+public class PaymentFragment extends Fragment {
 
 
-    public GrafikFragment() {
+    public PaymentFragment() {
         // Required empty public constructor
     }
 
@@ -26,12 +25,11 @@ public class GrafikFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_grafik, container, false);
+        return inflater.inflate(R.layout.fragment_payment, container, false);
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-
     }
 }

@@ -1,0 +1,63 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgorund_polos"
+    tools:context="bleizing.riva.fragment.PaymentFragment"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:background="@color/hijau"
+        android:text="PERAWAT TERSEDIA"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/montserrat"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lakukan Pembayaran"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="14sp"
+            android:fontFamily="@font/montserrat"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="5dp"
+            android:background="@drawable/border_list_hitam">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Perkiraan Biaya"
+                android:textSize="13sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:fontFamily="@font/montserrat" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="Rp. 500.000"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimaryDark"
+                android:fontFamily="@font/montserrat" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

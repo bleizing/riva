@@ -1,4 +1,4 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,15 +7,16 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="vertical">
 
                 <ImageView
@@ -46,7 +47,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="ISI ARTICLEISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLEISI ARTICLE "
+                        android:text="ISI ARTICLEISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLEISI ARTICLE ISI ARTICLE ISI ARTICLE ISI ARTICLE ISI"
                         android:textSize="12sp"
                         android:textColor="@color/colorPrimaryDark"
                         android:fontFamily="@font/montserrat"/>
@@ -55,27 +56,34 @@
 
             </LinearLayout>
 
-            <!--<Button-->
-                <!--android:id="@+id/previous"-->
-                <!--android:layout_width="35dp"-->
-                <!--android:layout_height="35dp"-->
-                <!--android:layout_alignParentBottom="true"-->
-                <!--android:background="@color/biru_muda"-->
-                <!--android:text="<"-->
-                <!--android:textSize="20sp" />-->
-
-            <!--<Button-->
-                <!--android:id="@+id/next"-->
-                <!--android:layout_width="35dp"-->
-                <!--android:layout_height="35dp"-->
-                <!--android:layout_alignParentBottom="true"-->
-                <!--android:layout_alignParentEnd="true"-->
-                <!--android:background="@color/biru_muda"-->
-                <!--android:text=">"-->
-                <!--android:textSize="20sp" />-->
-
-        </RelativeLayout>
+        </LinearLayout>
 
     </ScrollView>
 
-</FrameLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp">
+
+        <Button
+            android:id="@+id/previous"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:background="@color/biru_muda"
+            android:text="@string/previous"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/next"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:background="@color/biru_muda"
+            android:layout_alignParentEnd="true"
+            android:text="@string/next"
+            android:textSize="20sp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
