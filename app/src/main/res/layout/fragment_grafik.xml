@@ -49,9 +49,10 @@
                 android:fontFamily="@font/montserrat"/>
 
             <Spinner
-                android:layout_width="150dp"
+                android:id="@+id/spin_kategori"
+                android:layout_width="125dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
+                android:layout_marginStart="35dp"
                 android:layout_marginEnd="25dp"/>
 
         </LinearLayout>
@@ -80,12 +81,10 @@
         android:layout_marginTop="5dp"
         android:gravity="center_horizontal|center_vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/montserrat"
-            android:text="Grafik"
-            android:textColor="@color/colorPrimaryDark" />
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/linechart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
     </LinearLayout>
 
     <TextView
@@ -157,6 +156,7 @@
         android:layout_marginTop="25dp">
 
         <Button
+            android:id="@+id/btn_tambah"
             android:layout_width="wrap_content"
             android:layout_height="35dp"
             android:paddingStart="20dp"

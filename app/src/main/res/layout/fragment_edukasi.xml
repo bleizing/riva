@@ -6,6 +6,7 @@
     tools:context="bleizing.riva.fragment.EdukasiFragment">
     
     <LinearLayout
+        android:id="@+id/linear_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -57,5 +58,13 @@
             android:textStyle="bold"/>
         
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/img_chat"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_below="@id/linear_1"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/chat_riva"/>
 
 </RelativeLayout>

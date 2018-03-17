@@ -14,16 +14,15 @@ import bleizing.riva.fragment.ArticleFragment;
 import bleizing.riva.fragment.BookingFragment;
 import bleizing.riva.fragment.EdukasiFragment;
 import bleizing.riva.fragment.HomecareFragment;
+import bleizing.riva.fragment.PaymentFragment;
+import bleizing.riva.fragment.PemesananFragment;
 
 public class HomecareActivity extends AppCompatActivity {
     private static final String TAG = "HomecareActivity";
 
     private static final String FRAGMENT_BOOKING_TAG = "BookingFragment";
-    private static final String FRAGMENT_DETAIL_ARTICLE_TAG = "DetailArticleFragment";
-    private static final String FRAGMENT_LUKA_TAG = "LukaFragment";
-    private static final String FRAGMENT_DETAIL_LUKA_TAG = "DetailLukaFragment";
-    private static final String FRAGMENT_KAKI_TAG = "KakiFragment";
-    private static final String FRAGMENT_DETAIL_KAKI_TAG = "DetailKakiFragment";
+    private static final String FRAGMENT_PAYMENT_TAG = "PaymentFragment";
+    private static final String FRAGMENT_PEMESANAN_TAG = "PemesananFragment";
 
     private String last_title;
 
@@ -71,7 +70,6 @@ public class HomecareActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
         goBack();
     }
 
@@ -95,6 +93,28 @@ public class HomecareActivity extends AppCompatActivity {
 
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.fragment_container, bookingFragment, FRAGMENT_BOOKING_TAG);
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
+
+    public void changeToPaymentFragment() {
+        last_title = toolbar.getTitle().toString();
+
+        PaymentFragment paymentFragment = new PaymentFragment();
+
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.fragment_container, paymentFragment, FRAGMENT_PAYMENT_TAG);
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
+
+    public void changeToPemesananFragment() {
+        last_title = toolbar.getTitle().toString();
+
+        PemesananFragment pemesananFragment = new PemesananFragment();
+
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.fragment_container, pemesananFragment, FRAGMENT_PAYMENT_TAG);
         transaction.addToBackStack(null);
         transaction.commit();
     }

@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 
 import bleizing.riva.R;
 import bleizing.riva.activity.HomecareActivity;
@@ -17,6 +18,9 @@ import bleizing.riva.activity.HomecareActivity;
  */
 public class BookingFragment extends Fragment {
 
+    private LinearLayout linear_perawat;
+    private LinearLayout linear_laki;
+    private LinearLayout linear_perempuan;
 
     public BookingFragment() {
         // Required empty public constructor
@@ -40,7 +44,42 @@ public class BookingFragment extends Fragment {
         btn_order.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ((HomecareActivity) getActivity()).changeToPaymentFragment();
+            }
+        });
 
+        linear_perawat = (LinearLayout) getActivity().findViewById(R.id.linear_perawat);
+        linear_laki = (LinearLayout) getActivity().findViewById(R.id.linear_laki);
+        linear_perempuan = (LinearLayout) getActivity().findViewById(R.id.linear_perempuan);
+
+        linear_perawat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                linear_perawat.setVisibility(View.GONE);
+                linear_laki.setVisibility(View.VISIBLE);
+                linear_perempuan.setVisibility(View.VISIBLE);
+            }
+        });
+
+        linear_laki.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (linear_perempuan.getVisibility() == View.GONE) {
+                    linear_perempuan.setVisibility(View.VISIBLE);
+                } else {
+                    linear_perempuan.setVisibility(View.GONE);
+                }
+            }
+        });
+
+        linear_perempuan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (linear_laki.getVisibility() == View.GONE) {
+                    linear_laki.setVisibility(View.VISIBLE);
+                } else {
+                    linear_laki.setVisibility(View.GONE);
+                }
             }
         });
     }
