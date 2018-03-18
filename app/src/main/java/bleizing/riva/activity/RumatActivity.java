@@ -11,8 +11,11 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 import bleizing.riva.R;
+import bleizing.riva.fragment.EdukasiFragment;
+import bleizing.riva.fragment.RumatFragment;
 
 public class RumatActivity extends AppCompatActivity {
+    private static final String TAG = "RumatActivity";
 
     private String last_title;
 
@@ -25,6 +28,11 @@ public class RumatActivity extends AppCompatActivity {
         actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.gradient_biru_biru));
         actionBar.setTitle("LOKASI");
         actionBar.setDisplayHomeAsUpEnabled(true);
+
+        if (savedInstanceState == null) {
+            RumatFragment rumatFragment = new RumatFragment();
+            getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, rumatFragment, TAG).commit();
+        }
 
 //        String url_article_rumat = "https://www.rumat-indonesia.com/menu/JABODETABEK.html";
 //
