@@ -9,6 +9,7 @@ import android.view.MenuItem;
 
 import bleizing.riva.R;
 import bleizing.riva.fragment.EdukasiFragment;
+import bleizing.riva.fragment.LoginFragment;
 
 public class LoginActivity extends AppCompatActivity {
     private static final String TAG = "LoginActivity";
@@ -28,8 +29,8 @@ public class LoginActivity extends AppCompatActivity {
         actionBar.setDisplayHomeAsUpEnabled(true);
 
         if (savedInstanceState == null) {
-            EdukasiFragment edukasiFragment = new EdukasiFragment();
-            getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, edukasiFragment, TAG).commit();
+            LoginFragment loginFragment = new LoginFragment();
+            getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, loginFragment, TAG).commit();
         }
     }
 
