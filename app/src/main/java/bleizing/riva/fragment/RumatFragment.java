@@ -18,6 +18,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -33,6 +34,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import java.util.ArrayList;
 
 import bleizing.riva.R;
+import bleizing.riva.activity.RumatActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -75,6 +77,27 @@ public class RumatFragment extends Fragment implements OnMapReadyCallback,
         fragment.getMapAsync(this);
 
         return view;
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+        RelativeLayout relative_1 = (RelativeLayout) getActivity().findViewById(R.id.relative_1);
+        relative_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((RumatActivity) getActivity()).changeToDetailRumatFragment();
+            }
+        });
+
+        RelativeLayout relative_2 = (RelativeLayout) getActivity().findViewById(R.id.relative_2);
+        relative_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((RumatActivity) getActivity()).changeToDetailRumatFragment();
+            }
+        });
     }
 
     @Override

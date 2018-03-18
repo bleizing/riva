@@ -16,11 +16,13 @@ import bleizing.riva.fragment.EdukasiFragment;
 import bleizing.riva.fragment.HomecareFragment;
 import bleizing.riva.fragment.PaymentFragment;
 import bleizing.riva.fragment.PemesananFragment;
+import bleizing.riva.fragment.RegistrasiFragment;
 
 public class HomecareActivity extends AppCompatActivity {
     private static final String TAG = "HomecareActivity";
 
     private static final String FRAGMENT_BOOKING_TAG = "BookingFragment";
+    private static final String FRAGMENT_REGISTRASI_TAG = "RegistrasiFragment";
     private static final String FRAGMENT_PAYMENT_TAG = "PaymentFragment";
     private static final String FRAGMENT_PEMESANAN_TAG = "PemesananFragment";
 
@@ -93,6 +95,17 @@ public class HomecareActivity extends AppCompatActivity {
 
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.fragment_container, bookingFragment, FRAGMENT_BOOKING_TAG);
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
+
+    public void changeToRegistrasiFragment() {
+        last_title = toolbar.getTitle().toString();
+
+        RegistrasiFragment registrasiFragment = new RegistrasiFragment();
+
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.fragment_container, registrasiFragment, FRAGMENT_REGISTRASI_TAG);
         transaction.addToBackStack(null);
         transaction.commit();
     }

@@ -2,20 +2,28 @@ package bleizing.riva.activity;
 
 import android.content.Intent;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 import bleizing.riva.R;
+import bleizing.riva.fragment.DetailRumatFragment;
 import bleizing.riva.fragment.EdukasiFragment;
+import bleizing.riva.fragment.KakiFragment;
+import bleizing.riva.fragment.RegistrasiFragment;
 import bleizing.riva.fragment.RumatFragment;
 
 public class RumatActivity extends AppCompatActivity {
     private static final String TAG = "RumatActivity";
+
+    private static final String FRAGMENT_DETAIL_RUMAT_TAG = "DetailRumatFragment";
+    private static final String FRAGMENT_REGISTRASI_TAG = "RegistrasiFragment";
 
     private String last_title;
 
@@ -86,5 +94,27 @@ public class RumatActivity extends AppCompatActivity {
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
         }
+    }
+
+    public void changeToDetailRumatFragment() {
+        last_title = getSupportActionBar().getTitle().toString();
+
+        DetailRumatFragment detailRumatFragment = new DetailRumatFragment();
+
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.fragment_container, detailRumatFragment, FRAGMENT_DETAIL_RUMAT_TAG);
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
+
+    public void changeToRegistrasiFragment(View view) {
+        last_title = getSupportActionBar().getTitle().toString();
+
+        RegistrasiFragment registrasiFragment = new RegistrasiFragment();
+
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.fragment_container, registrasiFragment, FRAGMENT_REGISTRASI_TAG);
+        transaction.addToBackStack(null);
+        transaction.commit();
     }
 }
