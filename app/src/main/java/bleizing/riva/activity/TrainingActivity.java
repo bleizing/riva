@@ -10,6 +10,7 @@ import android.view.MenuItem;
 
 import bleizing.riva.R;
 import bleizing.riva.fragment.ArticleFragment;
+import bleizing.riva.fragment.DetailTrainingFragment;
 import bleizing.riva.fragment.TrainingFragment;
 
 public class TrainingActivity extends AppCompatActivity {
@@ -31,10 +32,10 @@ public class TrainingActivity extends AppCompatActivity {
         actionBar.setTitle(getResources().getString(R.string.untuk_anda));
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        if (savedInstanceState == null) {
-            TrainingFragment trainingFragment = new TrainingFragment();
-            getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, trainingFragment, TAG).commit();
-        }
+//        if (savedInstanceState == null) {
+//            TrainingFragment trainingFragment = new TrainingFragment();
+//            getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, trainingFragment, TAG).commit();
+//        }
     }
 
     @Override
@@ -70,13 +71,24 @@ public class TrainingActivity extends AppCompatActivity {
         getSupportActionBar().setTitle(title);
     }
 
-    public void changeToArticleFragment() {
-        last_title = getSupportActionBar().getTitle().toString();
+//    public void changeToArticleFragment() {
+//        last_title = getSupportActionBar().getTitle().toString();
+//
+//        ArticleFragment articleFragment = new ArticleFragment();
+//
+//        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+//        transaction.replace(R.id.fragment_container, articleFragment, FRAGMENT_DETAIL_TRAINING_TAG);
+//        transaction.addToBackStack(null);
+//        transaction.commit();
+//    }
 
-        ArticleFragment articleFragment = new ArticleFragment();
+    public void changeToDetailTrainingFragment() {
+        last_title = getSupportActionBar().getTitle().toString();
+//
+        DetailTrainingFragment detailTrainingFragment = new DetailTrainingFragment();
 
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.fragment_container, articleFragment, FRAGMENT_DETAIL_TRAINING_TAG);
+        transaction.replace(R.id.fragment_container, detailTrainingFragment, FRAGMENT_DETAIL_TRAINING_TAG);
         transaction.addToBackStack(null);
         transaction.commit();
     }

@@ -24,8 +24,57 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:text="GRAFIK TINGKAT GLUKOSA"
+            android:textColor="@color/cardview_light_background"
             android:textSize="18sp"
             android:textStyle="bold"
+            android:fontFamily="@font/montserrat"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_harian"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:background="@color/hijau"
+            android:gravity="center_horizontal"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:layout_marginEnd="5dp"
+            android:text="HARIAN"
+            android:textColor="@color/cardview_light_background"
+            android:textSize="10sp"
+            android:fontFamily="@font/montserrat"/>
+
+        <TextView
+            android:id="@+id/tv_mingguan"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:background="@color/cardview_dark_background"
+            android:gravity="center_horizontal"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:layout_marginEnd="5dp"
+            android:text="MINGGUAN"
+            android:textColor="@color/cardview_light_background"
+            android:textSize="10sp"
+            android:fontFamily="@font/montserrat"/>
+
+        <TextView
+            android:id="@+id/tv_bulanan"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:background="@color/cardview_dark_background"
+            android:gravity="center_horizontal"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:text="BULANAN"
+            android:textColor="@color/cardview_light_background"
+            android:textSize="10sp"
             android:fontFamily="@font/montserrat"/>
     </LinearLayout>
 
@@ -48,12 +97,12 @@
                 android:textStyle="bold"
                 android:fontFamily="@font/montserrat"/>
 
-            <Spinner
-                android:id="@+id/spin_kategori"
-                android:layout_width="125dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="35dp"
-                android:layout_marginEnd="25dp"/>
+            <!--<Spinner-->
+                <!--android:id="@+id/spin_kategori"-->
+                <!--android:layout_width="125dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginStart="35dp"-->
+                <!--android:layout_marginEnd="25dp"/>-->
 
         </LinearLayout>
 
@@ -107,7 +156,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
             android:gravity="center_horizontal"
-            android:background="@color/colorPrimaryDark"
+            android:background="@color/cardview_light_background"
             android:layout_marginStart="25dp"
             android:layout_marginEnd="25dp"
             android:paddingTop="3dp"
@@ -129,7 +178,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
             android:gravity="center_horizontal"
-            android:background="@color/colorPrimaryDark"
+            android:background="@color/cardview_light_background"
             android:layout_marginStart="25dp"
             android:layout_marginEnd="25dp"
             android:paddingTop="3dp"
@@ -149,22 +198,32 @@
 
     </LinearLayout>
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="25dp">
+        android:layout_marginTop="25dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:background="@color/biru_muda">
 
-        <Button
-            android:id="@+id/btn_tambah"
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/icon_6"/>
+
+        <TextView
+            android:id="@+id/tv_tambah"
             android:layout_width="wrap_content"
             android:layout_height="35dp"
-            android:paddingStart="20dp"
-            android:paddingEnd="20dp"
+            android:gravity="center_vertical"
             android:text="TAMBAH KADAR GULA DARAH"
+            android:textSize="15sp"
+            android:textColor="@color/cardview_light_background"
             android:textStyle="bold"
-            android:fontFamily="@font/montserrat"
-            android:background="@color/biru_muda"/>
-    </RelativeLayout>
+            android:fontFamily="@font/montserrat"/>
+    </LinearLayout>
 
 </LinearLayout>

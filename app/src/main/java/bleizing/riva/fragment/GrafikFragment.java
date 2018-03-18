@@ -37,6 +37,10 @@ public class GrafikFragment extends Fragment {
 
     private LineChart lineChart;
 
+    private TextView tv_harian;
+    private TextView tv_mingguan;
+    private TextView tv_bulanan;
+
     public GrafikFragment() {
         // Required empty public constructor
     }
@@ -53,6 +57,37 @@ public class GrafikFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
+        tv_harian = (TextView) getActivity().findViewById(R.id.tv_harian);
+        tv_mingguan = (TextView) getActivity().findViewById(R.id.tv_mingguan);
+        tv_bulanan = (TextView) getActivity().findViewById(R.id.tv_bulanan);
+
+        tv_harian.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                tv_harian.setBackground(getActivity().getResources().getDrawable(R.color.hijau));
+                tv_mingguan.setBackground(getActivity().getResources().getDrawable(R.color.cardview_dark_background));
+                tv_bulanan.setBackground(getActivity().getResources().getDrawable(R.color.cardview_dark_background));
+            }
+        });
+
+        tv_mingguan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                tv_mingguan.setBackground(getActivity().getResources().getDrawable(R.color.hijau));
+                tv_bulanan.setBackground(getActivity().getResources().getDrawable(R.color.cardview_dark_background));
+                tv_harian.setBackground(getActivity().getResources().getDrawable(R.color.cardview_dark_background));
+            }
+        });
+
+        tv_bulanan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                tv_bulanan.setBackground(getActivity().getResources().getDrawable(R.color.hijau));
+                tv_harian.setBackground(getActivity().getResources().getDrawable(R.color.cardview_dark_background));
+                tv_mingguan.setBackground(getActivity().getResources().getDrawable(R.color.cardview_dark_background));
+            }
+        });
+
         lineChart = (LineChart) getActivity().findViewById(R.id.linechart);
         // add data
         setData();
@@ -68,35 +103,35 @@ public class GrafikFragment extends Fragment {
         lineChart.setDescription("Demo Line Chart");
         lineChart.setNoDataTextDescription("You need to provide data for the chart.");
 
-        List<String> categories = new ArrayList<String>();
-        categories.add("Harian");
-        categories.add("Mingguan");
-        categories.add("Bulanan");
+//        List<String> categories = new ArrayList<String>();
+//        categories.add("Harian");
+//        categories.add("Mingguan");
+//        categories.add("Bulanan");
+//
+//        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, categories);
+//        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//
+//        Spinner spin_kategori = (Spinner) getActivity().findViewById(R.id.spin_kategori);
+//        spin_kategori.setAdapter(dataAdapter);
+//
+//        spin_kategori.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+//            @Override
+//            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+//                // On selecting a spinner item
+//                String item = adapterView.getItemAtPosition(i).toString();
+//
+//                // Showing selected spinner item
+//                Toast.makeText(adapterView.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
+//            }
+//
+//            @Override
+//            public void onNothingSelected(AdapterView<?> adapterView) {
+//
+//            }
+//        });
 
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, categories);
-        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        Spinner spin_kategori = (Spinner) getActivity().findViewById(R.id.spin_kategori);
-        spin_kategori.setAdapter(dataAdapter);
-
-        spin_kategori.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                // On selecting a spinner item
-                String item = adapterView.getItemAtPosition(i).toString();
-
-                // Showing selected spinner item
-                Toast.makeText(adapterView.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
-
-        Button btn_tambah = (Button) getActivity().findViewById(R.id.btn_tambah);
-        btn_tambah.setOnClickListener(new View.OnClickListener() {
+        TextView tv_tambah = (TextView) getActivity().findViewById(R.id.tv_tambah);
+        tv_tambah.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // custom dialog
@@ -109,9 +144,9 @@ public class GrafikFragment extends Fragment {
 //                ImageView image = (ImageView) dialog.findViewById(R.id.image);
 //                image.setImageResource(R.drawable.ic_launcher);
 
-                TextView tv_input = (TextView) dialog.findViewById(R.id.tv_input);
+                Button btn_tambah = (Button) dialog.findViewById(R.id.btn_tambah);
                 // if button is clicked, close the custom dialog
-                tv_input.setOnClickListener(new View.OnClickListener() {
+                btn_tambah.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         final Dialog dialog2 = new Dialog(getActivity());

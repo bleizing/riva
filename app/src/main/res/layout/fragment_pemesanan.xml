@@ -48,9 +48,10 @@
 
                 <ImageView
                     android:id="@+id/img_perawat"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:src="@mipmap/ic_launcher" />
+                    android:layout_width="125dp"
+                    android:layout_height="125dp"
+                    android:layout_marginTop="-25dp"
+                    android:src="@drawable/nurse" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"

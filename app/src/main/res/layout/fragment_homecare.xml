@@ -7,9 +7,12 @@
     android:orientation="vertical">
 
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="200dp" />
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginBottom="-15dp"
+        android:layout_marginTop="-5dp"
+        android:src="@drawable/registered_nurse_large" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -25,6 +28,7 @@
                 android:paddingEnd="20dp"
                 android:text="APA ITU HOMECARE?"
                 android:textSize="16sp"
+                android:textColor="@color/cardview_light_background"
                 android:textStyle="bold"
                 android:fontFamily="@font/montserrat"/>
         </LinearLayout>
@@ -40,7 +44,25 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/montserrat"
-            android:text="ISI ABOUT HOMECARE ISI ABOUT HOMECARE ISI ABOUT HOMECARE ISI ABOUT HOMECARE ISI ABOUT HOMECARE ISI ABOUT HOMECARE ISI ABOUT HOMECARE ISI ABOUT HOMECARE ISI ABOUT HOMECARE ISI ABOUT HOMECARE ISI ABOUT HOMECARE ISI ABOUT HOMECARE ISI ABOUT HOMECARE ISI ABOUT HOMECARE "
+            android:text="@string/isi_homecare1"
+            android:textSize="10sp"
+            android:textColor="@color/colorPrimaryDark" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:text="@string/isi_homecare2"
+            android:textSize="10sp"
             android:textColor="@color/colorPrimaryDark" />
 
     </LinearLayout>
@@ -61,7 +83,7 @@
             android:gravity="center_horizontal"
             android:text="Biaya Pendaftaran Sebesar Rp. 100.000"
             android:textColor="@color/colorPrimaryDark"
-            android:textSize="17sp"/>
+            android:textSize="16sp"/>
 
         <Button
             android:id="@+id/btn_booking_sekarang"
@@ -70,7 +92,9 @@
             android:background="@color/biru_muda"
             android:layout_margin="5dp"
             android:text="BOOKING SEKARANG"
-            android:textSize="15sp"/>
+            android:textColor="@color/cardview_light_background"
+            android:textSize="15sp"
+            android:fontFamily="@font/montserrat"/>
     </LinearLayout>
 
 </LinearLayout>

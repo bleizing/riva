@@ -26,25 +26,25 @@ public class RumatActivity extends AppCompatActivity {
         actionBar.setTitle("LOKASI");
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        String url_article_rumat = "https://www.rumat-indonesia.com/menu/JABODETABEK.html";
-
-        WebView webView = (WebView) findViewById(R.id.webview);
-
-        WebSettings webSettings = webView.getSettings();
-
-        webSettings.setJavaScriptEnabled(true);
-
-        webView.setWebViewClient(new WebViewClient() {
-            @Override
-            public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                view.loadUrl(url);
-                return true;
-            }
-        });
-        webView.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
-        webView.clearCache(true);
-        webView.clearHistory();
-        webView.loadUrl(url_article_rumat);
+//        String url_article_rumat = "https://www.rumat-indonesia.com/menu/JABODETABEK.html";
+//
+//        WebView webView = (WebView) findViewById(R.id.webview);
+//
+//        WebSettings webSettings = webView.getSettings();
+//
+//        webSettings.setJavaScriptEnabled(true);
+//
+//        webView.setWebViewClient(new WebViewClient() {
+//            @Override
+//            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+//                view.loadUrl(url);
+//                return true;
+//            }
+//        });
+//        webView.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
+//        webView.clearCache(true);
+//        webView.clearHistory();
+//        webView.loadUrl(url_article_rumat);
     }
 
     @Override

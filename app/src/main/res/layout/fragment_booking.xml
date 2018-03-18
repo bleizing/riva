@@ -62,9 +62,10 @@
                 <ImageView
                     android:layout_width="25dp"
                     android:layout_height="25dp"
-                    android:layout_weight="0.1"
+                    android:layout_marginEnd="10dp"
                     android:layout_gravity="center_vertical"
-                    android:src="@mipmap/ic_launcher" />
+                    android:src="@drawable/icon_6"
+                    android:background="@color/hijau"/>
 
             </LinearLayout>
             <!--End of Nama Lengkap-->
@@ -145,9 +146,10 @@
                 <ImageView
                     android:layout_width="25dp"
                     android:layout_height="25dp"
-                    android:layout_weight="0.1"
+                    android:layout_marginEnd="10dp"
                     android:layout_gravity="center_vertical"
-                    android:src="@mipmap/ic_launcher" />
+                    android:src="@drawable/icon_6"
+                    android:background="@color/hijau"/>
 
             </LinearLayout>
             <!--End of Foto Luka-->
@@ -176,6 +178,7 @@
                     android:layout_height="wrap_content"
                     android:text="Jadwal"
                     android:textSize="12sp"
+                    android:textColor="@color/colorPrimaryDark"
                     android:fontFamily="@font/montserrat"/>
 
                 <ImageView
@@ -197,6 +200,15 @@
                     android:fontFamily="@font/montserrat"
                     android:backgroundTint="@android:color/transparent"/>
 
+                <!--<TextView-->
+                    <!--android:layout_width="100dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_gravity="center_vertical"-->
+                    <!--android:text="dd/mm/yyyy"-->
+                    <!--android:textSize="12sp"-->
+                    <!--android:textColor="@color/colorPrimaryDark"-->
+                    <!--android:fontFamily="@font/montserrat"/>-->
+
                 <ImageView
                     android:layout_width="25dp"
                     android:layout_height="25dp"
@@ -215,6 +227,15 @@
                     android:textColor="@color/colorPrimaryDark"
                     android:fontFamily="@font/montserrat"
                     android:backgroundTint="@android:color/transparent"/>
+
+                <!--<TextView-->
+                    <!--android:layout_width="100dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_gravity="center_vertical"-->
+                    <!--android:text="00:00"-->
+                    <!--android:textSize="12sp"-->
+                    <!--android:textColor="@color/colorPrimaryDark"-->
+                    <!--android:fontFamily="@font/montserrat"/>-->
 
             </LinearLayout>
             <!--End of Jadwal-->
@@ -469,9 +490,10 @@
                 <ImageView
                     android:layout_width="25dp"
                     android:layout_height="25dp"
-                    android:layout_weight="0.1"
+                    android:layout_marginEnd="10dp"
                     android:layout_gravity="center_vertical"
-                    android:src="@mipmap/ic_launcher" />
+                    android:src="@drawable/icon_13"
+                    android:background="@color/hijau"/>
 
             </LinearLayout>
             <!--End of Kode Referensi-->
@@ -490,7 +512,8 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/border_round_button"
                     android:text="ORDER"
-                    android:textSize="14sp"
+                    android:textColor="@color/cardview_light_background"
+                    android:textSize="16sp"
                     android:fontFamily="@font/montserrat"/>
 
             </LinearLayout>

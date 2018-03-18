@@ -48,6 +48,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Grafik"
+                    android:textColor="@color/cardview_light_background"
                     android:textSize="15sp"
                     android:fontFamily="@font/montserrat"/>
             </LinearLayout>
@@ -70,6 +71,7 @@
                     android:layout_height="wrap_content"
                     android:text="Pengingat"
                     android:textSize="15sp"
+                    android:textColor="@color/cardview_light_background"
                     android:fontFamily="@font/montserrat"/>
             </LinearLayout>
 

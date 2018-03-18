@@ -8,27 +8,67 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
-        android:text="Input Gula Darah"
+        android:layout_marginStart="10dp"
+        android:text="Tambah Gula Darah"
         android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimaryDark"
+        android:fontFamily="@font/montserrat"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/hijau"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="INPUT ANGKA"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="15sp"
         android:textStyle="bold"
         android:fontFamily="@font/montserrat"/>
 
     <EditText
+        android:id="@+id/angka"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingStart="10dp"
-        android:hint="Gula Darah"/>
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/border_list_hitam" />
 
     <TextView
-        android:id="@+id/tv_input"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="end"
-        android:layout_marginEnd="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:text="INPUT"
+        android:layout_marginStart="20dp"
+        android:text="TAMBAH CATATAN (OPTIONAL)"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="15sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/montserrat"/>
+
+    <EditText
+        android:id="@+id/catatan"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/border_list_hitam" />
+
+    <Button
+        android:id="@+id/btn_tambah"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/hijau"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="10dp"
+        android:text="TAMBAH DATA"
+        android:textSize="16sp"
+        android:textColor="@color/cardview_light_background"
+        android:textStyle="bold"
         android:fontFamily="@font/montserrat"/>
 
 </LinearLayout>

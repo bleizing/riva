@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.TextView;
 
 import bleizing.riva.R;
 import bleizing.riva.activity.EdukasiActivity;
@@ -38,24 +39,32 @@ public class LukaFragment extends Fragment {
 
         ((EdukasiActivity) getActivity()).setActionBarTitle("PERAWATAN LUKA");
 
-        String url_article_rumat = "https://www.rumat-indonesia.com/menu/artikel.html";
+//        String url_article_rumat = "https://www.rumat-indonesia.com/menu/artikel.html";
+//
+//        WebView webView = (WebView) getActivity().findViewById(R.id.webview);
+//
+//        WebSettings webSettings = webView.getSettings();
+//
+//        webSettings.setJavaScriptEnabled(true);
+//
+//        webView.setWebViewClient(new WebViewClient() {
+//            @Override
+//            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+//                view.loadUrl(url);
+//                return true;
+//            }
+//        });
+//        webView.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
+//        webView.clearCache(true);
+//        webView.clearHistory();
+//        webView.loadUrl(url_article_rumat);
 
-        WebView webView = (WebView) getActivity().findViewById(R.id.webview);
-
-        WebSettings webSettings = webView.getSettings();
-
-        webSettings.setJavaScriptEnabled(true);
-
-        webView.setWebViewClient(new WebViewClient() {
+        TextView tv_diabetes = (TextView) getActivity().findViewById(R.id.tv_diabetes);
+        tv_diabetes.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                view.loadUrl(url);
-                return true;
+            public void onClick(View view) {
+                ((EdukasiActivity) getActivity()).changeToDetailLukaFragment(1);
             }
         });
-        webView.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
-        webView.clearCache(true);
-        webView.clearHistory();
-        webView.loadUrl(url_article_rumat);
     }
 }

@@ -51,7 +51,6 @@ public class PaymentFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 RadioButton rbChecked = (RadioButton) getActivity().findViewById(rg_pembayaran.getCheckedRadioButtonId());
-                Log.d(TAG, "Checked = " + rbChecked.getText().toString());
                 ((HomecareActivity) getActivity()).changeToPemesananFragment();
             }
         });

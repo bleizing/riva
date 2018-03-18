@@ -23,13 +23,21 @@
                 android:layout_height="?attr/actionBarSize"
                 app:popupTheme="@style/AppTheme.PopupOverlay" />
 
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/cart"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="20dp"
+                android:layout_centerVertical="true"/>
+
             <TextView
                 android:id="@+id/notif_1"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_alignParentEnd="true"
-                android:layout_marginEnd="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="5dp"
                 android:gravity="center"
                 android:background="@drawable/round_notif_1"
                 android:text="1"
@@ -41,8 +49,8 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_alignParentEnd="true"
-                android:layout_marginEnd="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="5dp"
                 android:gravity="center"
                 android:background="@drawable/round_notif_2"
                 android:text="@string/tanda_seru"
@@ -54,8 +62,8 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_alignParentEnd="true"
-                android:layout_marginEnd="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="5dp"
                 android:gravity="center"
                 android:background="@drawable/round_notif_3"
                 android:textColor="@color/colorPrimaryDark"

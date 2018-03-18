@@ -13,6 +13,7 @@ import bleizing.riva.R;
 import bleizing.riva.fragment.ArticleFragment;
 import bleizing.riva.fragment.BonusReferensiFragment;
 import bleizing.riva.fragment.DetailArticleFragment;
+import bleizing.riva.fragment.DetailLukaFragment;
 import bleizing.riva.fragment.EdukasiFragment;
 import bleizing.riva.fragment.KakiFragment;
 import bleizing.riva.fragment.LukaFragment;
@@ -99,6 +100,20 @@ public class EdukasiActivity extends AppCompatActivity {
 
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.fragment_container, lukaFragment, FRAGMENT_LUKA_TAG);
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
+
+    public void changeToDetailLukaFragment(int i) {
+        last_title = getSupportActionBar().getTitle().toString();
+
+        DetailLukaFragment detailLukaFragment = new DetailLukaFragment();
+        Bundle args = new Bundle();
+        args.putInt("luka", i);
+        detailLukaFragment.setArguments(args);
+
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.fragment_container, detailLukaFragment, FRAGMENT_DETAIL_LUKA_TAG);
         transaction.addToBackStack(null);
         transaction.commit();
     }
