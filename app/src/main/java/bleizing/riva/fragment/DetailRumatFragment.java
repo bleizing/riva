@@ -1,6 +1,7 @@
 package bleizing.riva.fragment;
 
 
+import android.app.Dialog;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -9,6 +10,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -76,5 +78,23 @@ public class DetailRumatFragment extends Fragment implements OnMapReadyCallback 
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
+        ImageView img_phone = (ImageView) getActivity().findViewById(R.id.img_phone);
+        img_phone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        ImageView img_share = (ImageView) getActivity().findViewById(R.id.img_share);
+        img_share.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final Dialog dialog = new Dialog(getActivity());
+                dialog.setContentView(R.layout.dialog_share);
+
+                dialog.show();
+            }
+        });
     }
 }

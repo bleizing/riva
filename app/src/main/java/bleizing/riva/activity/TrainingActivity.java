@@ -7,6 +7,11 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import bleizing.riva.R;
 import bleizing.riva.fragment.ArticleFragment;
@@ -25,12 +30,31 @@ public class TrainingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_training);
 
+        FrameLayout frameLayout = (FrameLayout) findViewById(R.id.fragment_container);
+        frameLayout.setVisibility(View.GONE);
+
         last_title = "";
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.gradient_biru_biru));
         actionBar.setTitle(getResources().getString(R.string.untuk_anda));
         actionBar.setDisplayHomeAsUpEnabled(true);
+
+        RelativeLayout relative_1 = (RelativeLayout) findViewById(R.id.relative_1);
+        relative_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                changeToDetailTrainingFragment();
+            }
+        });
+
+        RelativeLayout relative_2 = (RelativeLayout) findViewById(R.id.relative_2);
+        relative_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                changeToDetailTrainingFragment();
+            }
+        });
 
 //        if (savedInstanceState == null) {
 //            TrainingFragment trainingFragment = new TrainingFragment();
@@ -60,10 +84,20 @@ public class TrainingActivity extends AppCompatActivity {
             fm.popBackStack();
             setActionBarTitle(last_title);
         } else {
-            // app icon in action bar clicked; go home
-            Intent intent = new Intent(this, HomeActivity.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            startActivity(intent);
+
+            LinearLayout linear_training = (LinearLayout) findViewById(R.id.linear_training);
+
+            FrameLayout frameLayout = (FrameLayout) findViewById(R.id.fragment_container);
+
+            if (linear_training.getVisibility() == View.VISIBLE && frameLayout.getVisibility() == View.GONE) {
+                // app icon in action bar clicked; go home
+                Intent intent = new Intent(this, HomeActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+            } else {
+                linear_training.setVisibility(View.VISIBLE);
+                frameLayout.setVisibility(View.GONE);
+            }
         }
     }
 
@@ -84,12 +118,19 @@ public class TrainingActivity extends AppCompatActivity {
 
     public void changeToDetailTrainingFragment() {
         last_title = getSupportActionBar().getTitle().toString();
+
+        LinearLayout linear_training = (LinearLayout) findViewById(R.id.linear_training);
+        linear_training.setVisibility(View.GONE);
+
+        FrameLayout frameLayout = (FrameLayout) findViewById(R.id.fragment_container);
+        frameLayout.setVisibility(View.VISIBLE);
 //
         DetailTrainingFragment detailTrainingFragment = new DetailTrainingFragment();
 
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.fragment_container, detailTrainingFragment, FRAGMENT_DETAIL_TRAINING_TAG);
-        transaction.addToBackStack(null);
-        transaction.commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, detailTrainingFragment, TAG).commit();
+//        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+//        transaction.replace(R.id.fragment_container, detailTrainingFragment, FRAGMENT_DETAIL_TRAINING_TAG);
+//        transaction.addToBackStack(null);
+//        transaction.commit();
     }
 }

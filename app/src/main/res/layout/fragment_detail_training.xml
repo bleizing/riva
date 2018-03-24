@@ -2,98 +2,275 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="bleizing.riva.fragment.DetailTrainingFragment"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context="bleizing.riva.fragment.DetailTrainingFragment">
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:layout_marginTop="-20dp"
         android:layout_marginBottom="-20dp"
-        android:src="@drawable/career_hero_1"/>
+        android:layout_marginTop="-20dp"
+        android:src="@drawable/career_hero_1" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/hijau"
-        android:paddingTop="10dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="-50dp"
         android:paddingBottom="10dp"
-        android:paddingStart="25dp"
         android:paddingEnd="25dp"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
+        android:paddingStart="25dp"
+        android:paddingTop="10dp">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/montserrat"
                 android:text="JADWAL TRAINING"
                 android:textColor="@color/cardview_light_background"
-                android:textStyle="bold"
-                android:textSize="15sp"
-                android:fontFamily="@font/montserrat"/>
+                android:textSize="12sp"
+                android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tv_hari"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:text="HARI/TANGGAL"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/montserrat"
+                android:text="MATERI : "
                 android:textColor="@color/cardview_light_background"
-                android:textStyle="bold"
-                android:textSize="15sp"
-                android:fontFamily="@font/montserrat"/>
+                android:textSize="11sp"
+                android:textStyle="bold" />
 
-            <ImageView
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:src="@drawable/icon_7"
-                android:layout_toStartOf="@id/tv_hari"
-                android:layout_marginEnd="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat"
+                android:text="PERAWATAN KAKI"
+                android:textColor="@color/cardview_light_background"
+                android:textSize="10sp"
+                android:textStyle="bold" />
 
-        </RelativeLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/montserrat"
+                android:text="TRAINER : "
+                android:textColor="@color/cardview_light_background"
+                android:textSize="11sp"
+                android:textStyle="bold" />
 
-        <RelativeLayout
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat"
+                android:text="DR. HADI SUSENO"
+                android:textColor="@color/cardview_light_background"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/icon_7"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/icon_7" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toEndOf="@id/icon_7"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat"
+                        android:text="HARI/TANGGAL"
+                        android:textColor="@color/cardview_light_background"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/montserrat"
+                        android:text="SABTU, 17 April 2018"
+                        android:textColor="@color/cardview_light_background"
+                        android:textSize="8sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/montserrat"
+                        android:text="LOKASI"
+                        android:textColor="@color/cardview_light_background"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/montserrat"
+                        android:text="KLINIK PERMATA,"
+                        android:textColor="@color/cardview_light_background"
+                        android:textSize="8sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat"
+                        android:text="TEBET"
+                        android:textColor="@color/cardview_light_background"
+                        android:textSize="8sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:paddingBottom="10dp"
+        android:gravity="center_horizontal"
+        android:background="@color/cardview_light_background">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="INVESTASI : RP. 2.500.000"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimaryDark"
+            android:fontFamily="@font/montserrat"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:orientation="vertical">
+
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="ISI FORM UNTUK PENDAFTARAN"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimaryDark"
+            android:fontFamily="@font/montserrat"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_round"
+            android:layout_marginTop="20dp">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:hint="Nama Lengkap"
+                android:textColorHint="@color/colorPrimaryDark"
+                android:textSize="11sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:fontFamily="@font/montserrat"
+                android:backgroundTint="@android:color/transparent"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_round"
             android:layout_marginTop="10dp">
 
-            <TextView
-                android:layout_width="wrap_content"
+            <EditText
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="5dp"
-                android:text="MATERI :"
+                android:layout_gravity="center_vertical"
+                android:hint="No Hp"
+                android:textColorHint="@color/colorPrimaryDark"
+                android:textSize="11sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:fontFamily="@font/montserrat"
+                android:backgroundTint="@android:color/transparent"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_round"
+            android:layout_marginTop="10dp">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:hint="Email"
+                android:textColorHint="@color/colorPrimaryDark"
+                android:textSize="11sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:fontFamily="@font/montserrat"
+                android:backgroundTint="@android:color/transparent"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="25dp">
+
+            <Button
+                android:id="@+id/btn_order"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_round_button"
+                android:text="BOOKING"
                 android:textColor="@color/cardview_light_background"
-                android:textStyle="bold"
-                android:textSize="13sp"
+                android:textSize="14sp"
                 android:fontFamily="@font/montserrat"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:text="SABTU, 17 April 2018"
-                android:paddingTop="-10dp"
-                android:textColor="@color/cardview_light_background"
-                android:textStyle="bold"
-                android:textSize="13sp"
-                android:fontFamily="@font/montserrat"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="PERAWATAN KAKI"
-                android:paddingTop="20dp"
-                android:textColor="@color/cardview_light_background"
-                android:textStyle="bold"
-                android:textSize="13sp"
-                android:fontFamily="@font/montserrat"/>
-        </RelativeLayout>
+        </LinearLayout>
 
     </LinearLayout>
 
