@@ -12,12 +12,16 @@ import android.widget.LinearLayout;
 
 import bleizing.riva.R;
 import bleizing.riva.activity.HomecareActivity;
+import bleizing.riva.activity.RumatActivity;
+import bleizing.riva.model.Model;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class RegistrasiFragment extends Fragment {
 
+    private HomecareActivity homecareActivity;
+    private RumatActivity rumatActivity;
 
     public RegistrasiFragment() {
         // Required empty public constructor
@@ -35,11 +39,25 @@ public class RegistrasiFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
+        if (Model.getHomecareActivity() != null) {
+            homecareActivity = Model.getHomecareActivity();
+        } else {
+            if (Model.getRumatActivity() != null) {
+                rumatActivity = Model.getRumatActivity();
+            }
+        }
+
         Button btn_register = (Button) getActivity().findViewById(R.id.btn_register);
         btn_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((HomecareActivity) getActivity()).changeToBookingFragment();
+                if (rumatActivity != null) {
+                    ((RumatActivity) getActivity()).changeToBookingFragment();
+                }
+
+                if (homecareActivity != null) {
+                    ((HomecareActivity) getActivity()).changeToBookingFragment();
+                }
             }
         });
     }

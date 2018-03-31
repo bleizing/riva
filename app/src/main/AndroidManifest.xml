@@ -39,8 +39,10 @@
         <activity android:name=".activity.HomecareActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activity.RumatActivity" />
-        <activity android:name=".activity.DressingActivity" />
-        <activity android:name=".activity.SuplemenActivity" />
+        <activity android:name=".activity.DressingActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activity.SuplemenActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activity.EdukasiActivity" />
         <activity android:name=".activity.TrainingActivity" />
         <activity android:name=".activity.BonusReferensiActivity" />

@@ -5,6 +5,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -24,15 +25,24 @@ public class SuplemenActivity extends AppCompatActivity implements BaseSliderVie
     private SliderLayout sliderLayout;
     private HashMap<String,String> hashFileMaps;
 
+    private Toolbar toolbar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_suplemen);
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.gradient_biru_biru));
-        actionBar.setTitle("SUPLEMEN");
-        actionBar.setDisplayHomeAsUpEnabled(true);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+//        ActionBar actionBar = getSupportActionBar();
+//        actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.gradient_biru_biru));
+//        actionBar.setTitle("SUPLEMEN");
+//        actionBar.setDisplayHomeAsUpEnabled(true);
+
+        setSupportActionBar(toolbar);
+        setTitle("SUPLEMEN");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setBackgroundDrawable(getResources().getDrawable(R.drawable.gradient_biru_biru));
 
         hashFileMaps = new HashMap<String, String>();
 

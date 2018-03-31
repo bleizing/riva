@@ -15,12 +15,17 @@ import android.widget.RadioGroup;
 
 import bleizing.riva.R;
 import bleizing.riva.activity.HomecareActivity;
+import bleizing.riva.activity.RumatActivity;
+import bleizing.riva.model.Model;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class PaymentFragment extends Fragment {
     private final String TAG = "PaymentFragment";
+
+    private HomecareActivity homecareActivity;
+    private RumatActivity rumatActivity;
 
     private RadioGroup rg_pembayaran;
     private RadioButton rb_cc;
@@ -44,6 +49,14 @@ public class PaymentFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
+        if (Model.getHomecareActivity() != null) {
+            homecareActivity = Model.getHomecareActivity();
+        } else {
+            if (Model.getRumatActivity() != null) {
+                rumatActivity = Model.getRumatActivity();
+            }
+        }
+
         rg_pembayaran = (RadioGroup) getActivity().findViewById(R.id.rg_pembayaran);
 
         Button btn_bayar = (Button) getActivity().findViewById(R.id.btn_bayar);
@@ -51,7 +64,13 @@ public class PaymentFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 RadioButton rbChecked = (RadioButton) getActivity().findViewById(rg_pembayaran.getCheckedRadioButtonId());
-                ((HomecareActivity) getActivity()).changeToPemesananFragment();
+                if (rumatActivity != null) {
+                    ((RumatActivity) getActivity()).changeToPemesananFragment();
+                }
+
+                if (homecareActivity != null) {
+                    ((HomecareActivity) getActivity()).changeToPemesananFragment();
+                }
             }
         });
     }

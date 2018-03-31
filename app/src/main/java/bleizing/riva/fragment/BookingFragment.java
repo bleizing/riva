@@ -12,11 +12,16 @@ import android.widget.LinearLayout;
 
 import bleizing.riva.R;
 import bleizing.riva.activity.HomecareActivity;
+import bleizing.riva.activity.RumatActivity;
+import bleizing.riva.model.Model;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class BookingFragment extends Fragment {
+
+    private HomecareActivity homecareActivity;
+    private RumatActivity rumatActivity;
 
     private LinearLayout linear_perawat;
     private LinearLayout linear_laki;
@@ -38,13 +43,34 @@ public class BookingFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        ((HomecareActivity) getActivity()).setActionBarTitle(getActivity().getResources().getString(R.string.homecare));
+        if (Model.getHomecareActivity() != null) {
+            homecareActivity = Model.getHomecareActivity();
+        } else {
+            if (Model.getRumatActivity() != null) {
+                rumatActivity = Model.getRumatActivity();
+            }
+        }
+
+        if (rumatActivity != null) {
+            ((RumatActivity) getActivity()).setActionBarTitle(getActivity().getResources().getString(R.string.homecare));
+        }
+
+        if (homecareActivity != null) {
+            ((HomecareActivity) getActivity()).setActionBarTitle(getActivity().getResources().getString(R.string.homecare));
+        }
+
 
         Button btn_order = (Button) getActivity().findViewById(R.id.btn_order);
         btn_order.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((HomecareActivity) getActivity()).changeToPaymentFragment();
+                if (rumatActivity != null) {
+                    ((RumatActivity) getActivity()).changeToPaymentFragment();
+                }
+
+                if (homecareActivity != null) {
+                    ((HomecareActivity) getActivity()).changeToPaymentFragment();
+                }
             }
         });
 

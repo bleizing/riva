@@ -17,6 +17,7 @@ import bleizing.riva.fragment.HomecareFragment;
 import bleizing.riva.fragment.PaymentFragment;
 import bleizing.riva.fragment.PemesananFragment;
 import bleizing.riva.fragment.RegistrasiFragment;
+import bleizing.riva.model.Model;
 
 public class HomecareActivity extends AppCompatActivity {
     private static final String TAG = "HomecareActivity";
@@ -48,6 +49,8 @@ public class HomecareActivity extends AppCompatActivity {
         setTitle(getResources().getString(R.string.homecare));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setBackgroundDrawable(getResources().getDrawable(R.drawable.gradient_biru_biru));
+
+        Model.setHomecareActivity(this);
 
         if (savedInstanceState == null) {
             HomecareFragment homecareFragment = new HomecareFragment();
@@ -86,6 +89,13 @@ public class HomecareActivity extends AppCompatActivity {
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        Model.clearHomecareActivity();
     }
 
     public void changeToBookingFragment() {
@@ -127,7 +137,7 @@ public class HomecareActivity extends AppCompatActivity {
         PemesananFragment pemesananFragment = new PemesananFragment();
 
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.fragment_container, pemesananFragment, FRAGMENT_PAYMENT_TAG);
+        transaction.replace(R.id.fragment_container, pemesananFragment, FRAGMENT_PEMESANAN_TAG);
         transaction.addToBackStack(null);
         transaction.commit();
     }

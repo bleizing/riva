@@ -34,17 +34,24 @@ import com.google.android.gms.location.LocationSettingsStatusCodes;
 import com.google.android.gms.tasks.OnSuccessListener;
 
 import bleizing.riva.R;
+import bleizing.riva.fragment.BookingFragment;
 import bleizing.riva.fragment.DetailRumatFragment;
 import bleizing.riva.fragment.EdukasiFragment;
 import bleizing.riva.fragment.KakiFragment;
+import bleizing.riva.fragment.PaymentFragment;
+import bleizing.riva.fragment.PemesananFragment;
 import bleizing.riva.fragment.RegistrasiFragment;
 import bleizing.riva.fragment.RumatFragment;
+import bleizing.riva.model.Model;
 
 public class RumatActivity extends AppCompatActivity {
     private static final String TAG = "RumatActivity";
 
     private static final String FRAGMENT_DETAIL_RUMAT_TAG = "DetailRumatFragment";
+    private static final String FRAGMENT_BOOKING_TAG = "BookingFragment";
     private static final String FRAGMENT_REGISTRASI_TAG = "RegistrasiFragment";
+    private static final String FRAGMENT_PAYMENT_TAG = "PaymentFragment";
+    private static final String FRAGMENT_PEMESANAN_TAG = "PemesananFragment";
 
     private final static int REQUEST_CHECK_SETTINGS = 0x1;
 
@@ -61,6 +68,8 @@ public class RumatActivity extends AppCompatActivity {
         actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.gradient_biru_biru));
         actionBar.setTitle("LOKASI");
         actionBar.setDisplayHomeAsUpEnabled(true);
+
+        Model.setRumatActivity(this);
 
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
 
@@ -125,6 +134,13 @@ public class RumatActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        Model.clearRumatActivity();
+    }
+
     public void changeToDetailRumatFragment() {
         last_title = getSupportActionBar().getTitle().toString();
 
@@ -143,6 +159,39 @@ public class RumatActivity extends AppCompatActivity {
 
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.fragment_container, registrasiFragment, FRAGMENT_REGISTRASI_TAG);
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
+
+    public void changeToBookingFragment() {
+        last_title = getSupportActionBar().getTitle().toString();
+
+        BookingFragment bookingFragment = new BookingFragment();
+
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.fragment_container, bookingFragment, FRAGMENT_BOOKING_TAG);
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
+
+    public void changeToPaymentFragment() {
+        last_title = getSupportActionBar().getTitle().toString();
+
+        PaymentFragment paymentFragment = new PaymentFragment();
+
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.fragment_container, paymentFragment, FRAGMENT_PAYMENT_TAG);
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
+
+    public void changeToPemesananFragment() {
+        last_title = getSupportActionBar().getTitle().toString();
+
+        PemesananFragment pemesananFragment = new PemesananFragment();
+
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.fragment_container, pemesananFragment, FRAGMENT_PEMESANAN_TAG);
         transaction.addToBackStack(null);
         transaction.commit();
     }

@@ -5,6 +5,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -26,6 +27,8 @@ public class DressingActivity extends AppCompatActivity implements BaseSliderVie
 
     private String last_title;
 
+    private Toolbar toolbar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,10 +36,17 @@ public class DressingActivity extends AppCompatActivity implements BaseSliderVie
 
         last_title = "";
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.gradient_biru_biru));
-        actionBar.setTitle("DRESSING");
-        actionBar.setDisplayHomeAsUpEnabled(true);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+//        ActionBar actionBar = getSupportActionBar();
+//        actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.gradient_biru_biru));
+//        actionBar.setTitle("DRESSING");
+//        actionBar.setDisplayHomeAsUpEnabled(true);
+
+        setSupportActionBar(toolbar);
+        setTitle("DRESSING");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setBackgroundDrawable(getResources().getDrawable(R.drawable.gradient_biru_biru));
 
         hashFileMaps = new HashMap<String, String>();
 
