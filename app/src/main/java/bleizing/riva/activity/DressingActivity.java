@@ -29,10 +29,16 @@ public class DressingActivity extends AppCompatActivity implements BaseSliderVie
 
     private Toolbar toolbar;
 
+    private HashMap<Integer, String> hashMapTitle;
+
+    private int countFragment = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dressing);
+
+        hashMapTitle = new HashMap<>();
 
         last_title = "";
 
@@ -120,11 +126,19 @@ public class DressingActivity extends AppCompatActivity implements BaseSliderVie
         goBack();
     }
 
+
+    public void setActionBarTitle(String title) {
+        getSupportActionBar().setTitle(title);
+    }
+
     private void goBack() {
         FragmentManager fm = getSupportFragmentManager();
         if (fm.getBackStackEntryCount() > 0) {
             fm.popBackStack();
 //            setActionBarTitle(last_title);
+
+            countFragment--;
+            setActionBarTitle(hashMapTitle.get(countFragment));
         } else {
             // app icon in action bar clicked; go home
             Intent intent = new Intent(this, HomeActivity.class);

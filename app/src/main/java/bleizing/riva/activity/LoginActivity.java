@@ -7,6 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import java.util.HashMap;
+
 import bleizing.riva.R;
 import bleizing.riva.fragment.EdukasiFragment;
 import bleizing.riva.fragment.LoginFragment;
@@ -16,10 +18,16 @@ public class LoginActivity extends AppCompatActivity {
 
     private String last_title;
 
+    private HashMap<Integer, String> hashMapTitle;
+
+    private int countFragment = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        hashMapTitle = new HashMap<>();
 
         last_title = "";
 
@@ -58,7 +66,10 @@ public class LoginActivity extends AppCompatActivity {
         FragmentManager fm = getSupportFragmentManager();
         if (fm.getBackStackEntryCount() > 0) {
             fm.popBackStack();
-            setActionBarTitle(last_title);
+//            setActionBarTitle(last_title);
+
+            countFragment--;
+            setActionBarTitle(hashMapTitle.get(countFragment));
         } else {
             // app icon in action bar clicked; go home
             Intent intent = new Intent(this, HomeActivity.class);

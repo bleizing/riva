@@ -10,6 +10,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
 
+import java.util.HashMap;
+
 import bleizing.riva.R;
 import bleizing.riva.fragment.EdukasiFragment;
 import bleizing.riva.fragment.GrafikFragment;
@@ -23,10 +25,16 @@ public class JurnalGdsActivity extends AppCompatActivity {
 
     private String last_title;
 
+    private HashMap<Integer, String> hashMapTitle;
+
+    private int countFragment = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jurnal_gds);
+
+        hashMapTitle = new HashMap<>();
 
         last_title = "";
 
@@ -53,6 +61,9 @@ public class JurnalGdsActivity extends AppCompatActivity {
                 if (!grafikFragment.isVisible()) {
                     last_title = getSupportActionBar().getTitle().toString();
 
+                    hashMapTitle.put(countFragment, last_title);
+                    countFragment++;
+
                     FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
                     transaction.replace(R.id.fragment_container, grafikFragment, FRAGMENT_GRAFIK_TAG);
                     transaction.commit();
@@ -72,6 +83,9 @@ public class JurnalGdsActivity extends AppCompatActivity {
 
                 if (!pengingatFragment.isVisible()) {
                     last_title = getSupportActionBar().getTitle().toString();
+
+                    hashMapTitle.put(countFragment, last_title);
+                    countFragment++;
 
                     FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
                     transaction.replace(R.id.fragment_container, pengingatFragment, FRAGMENT_PENGINGAT_TAG);
@@ -101,7 +115,10 @@ public class JurnalGdsActivity extends AppCompatActivity {
         FragmentManager fm = getSupportFragmentManager();
         if (fm.getBackStackEntryCount() > 0) {
             fm.popBackStack();
-            setActionBarTitle(last_title);
+//            setActionBarTitle(last_title);
+
+            countFragment--;
+            setActionBarTitle(hashMapTitle.get(countFragment));
         } else {
             // app icon in action bar clicked; go home
             Intent intent = new Intent(this, HomeActivity.class);

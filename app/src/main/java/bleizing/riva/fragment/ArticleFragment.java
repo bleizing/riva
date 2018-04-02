@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.LinearLayout;
 
 import bleizing.riva.MyClickListener;
 import bleizing.riva.R;
@@ -66,24 +67,37 @@ public class ArticleFragment extends Fragment {
 
         ((EdukasiActivity) getActivity()).setActionBarTitle("ARTIKEL");
 
-        String url_article_rumat = "https://www.rumat-indonesia.com/menu/artikel.html";
+//        String url_article_rumat = "https://www.rumat-indonesia.com/menu/artikel.html";
+//
+//        WebView webView = (WebView) getActivity().findViewById(R.id.webview);
+//
+//        WebSettings webSettings = webView.getSettings();
+//
+//        webSettings.setJavaScriptEnabled(true);
+//
+//        webView.setWebViewClient(new WebViewClient() {
+//            @Override
+//            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+//                view.loadUrl(url);
+//                return true;
+//            }
+//        });
+//        webView.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
+//        webView.clearCache(true);
+//        webView.clearHistory();
+//        webView.loadUrl(url_article_rumat);
 
-        WebView webView = (WebView) getActivity().findViewById(R.id.webview);
+        LinearLayout linear_kotak1 = (LinearLayout) getActivity().findViewById(R.id.linear_kotak1);
+        LinearLayout linear_kotak2 = (LinearLayout) getActivity().findViewById(R.id.linear_kotak2);
 
-        WebSettings webSettings = webView.getSettings();
-
-        webSettings.setJavaScriptEnabled(true);
-
-        webView.setWebViewClient(new WebViewClient() {
-            @Override
-            public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                view.loadUrl(url);
-                return true;
-            }
-        });
-        webView.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
-        webView.clearCache(true);
-        webView.clearHistory();
-        webView.loadUrl(url_article_rumat);
+        linear_kotak1.setOnClickListener(onClickListener);
+        linear_kotak2.setOnClickListener(onClickListener);
     }
+
+    private View.OnClickListener onClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            ((EdukasiActivity) getActivity()).changeToDetailArticleFragment(1);
+        }
+    };
 }

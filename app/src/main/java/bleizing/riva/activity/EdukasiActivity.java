@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 
+import java.util.HashMap;
+
 import bleizing.riva.R;
 import bleizing.riva.fragment.ArticleFragment;
 import bleizing.riva.fragment.BonusReferensiFragment;
@@ -28,12 +30,18 @@ public class EdukasiActivity extends AppCompatActivity {
     private static final String FRAGMENT_KAKI_TAG = "KakiFragment";
     private static final String FRAGMENT_DETAIL_KAKI_TAG = "DetailKakiFragment";
 
+    private HashMap<Integer, String> hashMapTitle;
+
+    private int countFragment = 0;
+
     private String last_title;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edukasi);
+
+        hashMapTitle = new HashMap<>();
 
         last_title = "";
 
@@ -71,6 +79,9 @@ public class EdukasiActivity extends AppCompatActivity {
     public void changeToArticleFragment() {
         last_title = getSupportActionBar().getTitle().toString();
 
+        hashMapTitle.put(countFragment, last_title);
+        countFragment++;
+
         ArticleFragment articleFragment = new ArticleFragment();
 
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
@@ -81,6 +92,9 @@ public class EdukasiActivity extends AppCompatActivity {
 
     public void changeToDetailArticleFragment(int article_id) {
         last_title = getSupportActionBar().getTitle().toString();
+
+        hashMapTitle.put(countFragment, last_title);
+        countFragment++;
 
         DetailArticleFragment detailArticleFragment = new DetailArticleFragment();
         Bundle args = new Bundle();
@@ -96,6 +110,9 @@ public class EdukasiActivity extends AppCompatActivity {
     public void changeToLukaFragment() {
         last_title = getSupportActionBar().getTitle().toString();
 
+        hashMapTitle.put(countFragment, last_title);
+        countFragment++;
+
         LukaFragment lukaFragment = new LukaFragment();
 
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
@@ -106,6 +123,9 @@ public class EdukasiActivity extends AppCompatActivity {
 
     public void changeToDetailLukaFragment(int i) {
         last_title = getSupportActionBar().getTitle().toString();
+
+        hashMapTitle.put(countFragment, last_title);
+        countFragment++;
 
         DetailLukaFragment detailLukaFragment = new DetailLukaFragment();
         Bundle args = new Bundle();
@@ -121,6 +141,9 @@ public class EdukasiActivity extends AppCompatActivity {
     public void changeToKakiFragment() {
         last_title = getSupportActionBar().getTitle().toString();
 
+        hashMapTitle.put(countFragment, last_title);
+        countFragment++;
+
         KakiFragment kakiFragment = new KakiFragment();
 
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
@@ -133,7 +156,10 @@ public class EdukasiActivity extends AppCompatActivity {
         FragmentManager fm = getSupportFragmentManager();
         if (fm.getBackStackEntryCount() > 0) {
             fm.popBackStack();
-            setActionBarTitle(last_title);
+//            setActionBarTitle(last_title);
+
+            countFragment--;
+            setActionBarTitle(hashMapTitle.get(countFragment));
         } else {
             // app icon in action bar clicked; go home
             Intent intent = new Intent(this, HomeActivity.class);

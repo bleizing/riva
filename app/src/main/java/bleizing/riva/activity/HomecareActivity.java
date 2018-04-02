@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import java.util.HashMap;
+
 import bleizing.riva.R;
 import bleizing.riva.fragment.ArticleFragment;
 import bleizing.riva.fragment.BookingFragment;
@@ -31,10 +33,16 @@ public class HomecareActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
 
+    private HashMap<Integer, String> hashMapTitle;
+
+    private int countFragment = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homecare);
+
+        hashMapTitle = new HashMap<>();
 
         last_title = "";
 
@@ -82,7 +90,10 @@ public class HomecareActivity extends AppCompatActivity {
         FragmentManager fm = getSupportFragmentManager();
         if (fm.getBackStackEntryCount() > 0) {
             fm.popBackStack();
-            setActionBarTitle(last_title);
+//            setActionBarTitle(last_title);
+
+            countFragment--;
+            setActionBarTitle(hashMapTitle.get(countFragment));
         } else {
             // app icon in action bar clicked; go home
             Intent intent = new Intent(this, HomeActivity.class);
@@ -112,6 +123,9 @@ public class HomecareActivity extends AppCompatActivity {
     public void changeToRegistrasiFragment() {
         last_title = toolbar.getTitle().toString();
 
+        hashMapTitle.put(countFragment, last_title);
+        countFragment++;
+
         RegistrasiFragment registrasiFragment = new RegistrasiFragment();
 
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
@@ -123,6 +137,9 @@ public class HomecareActivity extends AppCompatActivity {
     public void changeToPaymentFragment() {
         last_title = toolbar.getTitle().toString();
 
+        hashMapTitle.put(countFragment, last_title);
+        countFragment++;
+
         PaymentFragment paymentFragment = new PaymentFragment();
 
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
@@ -133,6 +150,9 @@ public class HomecareActivity extends AppCompatActivity {
 
     public void changeToPemesananFragment() {
         last_title = toolbar.getTitle().toString();
+
+        hashMapTitle.put(countFragment, last_title);
+        countFragment++;
 
         PemesananFragment pemesananFragment = new PemesananFragment();
 

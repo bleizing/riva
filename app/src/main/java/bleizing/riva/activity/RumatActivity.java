@@ -33,6 +33,8 @@ import com.google.android.gms.location.LocationSettingsStates;
 import com.google.android.gms.location.LocationSettingsStatusCodes;
 import com.google.android.gms.tasks.OnSuccessListener;
 
+import java.util.HashMap;
+
 import bleizing.riva.R;
 import bleizing.riva.fragment.BookingFragment;
 import bleizing.riva.fragment.DetailRumatFragment;
@@ -59,10 +61,19 @@ public class RumatActivity extends AppCompatActivity {
 
     private String last_title;
 
+    private HashMap<Integer, String> hashMapTitle;
+
+    private int countFragment = 0;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rumat);
+
+        hashMapTitle = new HashMap<>();
+
+        last_title = "";
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.gradient_biru_biru));
@@ -125,7 +136,10 @@ public class RumatActivity extends AppCompatActivity {
         FragmentManager fm = getSupportFragmentManager();
         if (fm.getBackStackEntryCount() > 0) {
             fm.popBackStack();
-            setActionBarTitle(last_title);
+//            setActionBarTitle(last_title);
+
+            countFragment--;
+            setActionBarTitle(hashMapTitle.get(countFragment));
         } else {
             // app icon in action bar clicked; go home
             Intent intent = new Intent(this, HomeActivity.class);
@@ -144,6 +158,9 @@ public class RumatActivity extends AppCompatActivity {
     public void changeToDetailRumatFragment() {
         last_title = getSupportActionBar().getTitle().toString();
 
+        hashMapTitle.put(countFragment, last_title);
+        countFragment++;
+
         DetailRumatFragment detailRumatFragment = new DetailRumatFragment();
 
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
@@ -154,6 +171,9 @@ public class RumatActivity extends AppCompatActivity {
 
     public void changeToRegistrasiFragment(View view) {
         last_title = getSupportActionBar().getTitle().toString();
+
+        hashMapTitle.put(countFragment, last_title);
+        countFragment++;
 
         RegistrasiFragment registrasiFragment = new RegistrasiFragment();
 
@@ -166,6 +186,9 @@ public class RumatActivity extends AppCompatActivity {
     public void changeToBookingFragment() {
         last_title = getSupportActionBar().getTitle().toString();
 
+        hashMapTitle.put(countFragment, last_title);
+        countFragment++;
+
         BookingFragment bookingFragment = new BookingFragment();
 
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
@@ -177,6 +200,9 @@ public class RumatActivity extends AppCompatActivity {
     public void changeToPaymentFragment() {
         last_title = getSupportActionBar().getTitle().toString();
 
+        hashMapTitle.put(countFragment, last_title);
+        countFragment++;
+
         PaymentFragment paymentFragment = new PaymentFragment();
 
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
@@ -187,6 +213,9 @@ public class RumatActivity extends AppCompatActivity {
 
     public void changeToPemesananFragment() {
         last_title = getSupportActionBar().getTitle().toString();
+
+        hashMapTitle.put(countFragment, last_title);
+        countFragment++;
 
         PemesananFragment pemesananFragment = new PemesananFragment();
 

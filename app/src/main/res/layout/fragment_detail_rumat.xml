@@ -7,7 +7,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="200dp">
 
         <com.google.android.gms.maps.MapView
             android:id="@+id/mapView"
@@ -16,11 +16,19 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true" />
 
-        <ImageView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:layout_alignBottom="@id/mapView"
-            android:src="@drawable/sansumdiabetes"/>
+            android:layout_alignParentBottom="true">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/sansumdiabetes" />
+
+        </LinearLayout>
+
     </RelativeLayout>
 
     <LinearLayout

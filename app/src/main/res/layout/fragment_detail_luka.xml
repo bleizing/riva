@@ -11,6 +11,9 @@
         <!--android:clipToPadding="false"-->
         <!--android:fillViewport="true">-->
 
+
+    <!--</ScrollView>-->
+
     <LinearLayout
         android:id="@+id/linear_diabetes"
         android:layout_width="match_parent"
@@ -82,7 +85,6 @@
 
         </LinearLayout>
 
-    <!--</ScrollView>-->
     </LinearLayout>
 
 </RelativeLayout>
